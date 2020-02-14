@@ -95,7 +95,7 @@ const Header = ({ siteTitle, menuLinks }) => {
           {siteTitle}
         </Typography>
         <div >
-          <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
+          <Box display={{ xs: 'none',sm:'none', md: 'none' }} m={1}>
             <Button>Login</Button>
             <Button>Login</Button>
             <Button>Login</Button>
