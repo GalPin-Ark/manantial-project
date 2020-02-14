@@ -15,12 +15,22 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'material icons',
+          'roboto:300,400,500,700',
+        ],
       },
     },
     `gatsby-transformer-sharp`,
@@ -35,6 +45,15 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, 
+      },
+    },
+    "gatsby-plugin-stripe",
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Sku"],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: true,
       },
     },
 
